@@ -4,18 +4,24 @@ Library    Browser
 Library    String
 Library    DebugLibrary
 
-
-# keyword common
 Resource    ${CURDIR}/../keyword/common/common.robot
 
-# keyword features
+#Pages
+Resource    ${CURDIR}/../keyword/pages/home_page.robot
+Resource    ${CURDIR}/../keyword/pages/product_detail_page.robot
+Resource    ${CURDIR}/../keyword/pages/shopping_bag_page.robot
 
-# keyword pages
+#Feature
+Resource    ${CURDIR}/../keyword/features/home_feature.robot
+Resource    ${CURDIR}/../keyword/features/product_detail_feature.robot
 
-# resource locator
+#locator
+Resource    ${CURDIR}/locator/home_locator.robot
+Resource    ${CURDIR}/locator/product_detail_locator.robot
+Resource    ${CURDIR}/locator/shopping_bag_locator.robot
 
-# resource setting
+#resource
+Variables    ${CURDIR}/testdata/tc${data}.yaml
+Variables    ${CURDIR}/translation/${lang}.yaml
 
-# resource test data
 
-# resource translation
