@@ -1,0 +1,5 @@
+Login_page:
+  please_enter_email: โปรดกรอกอีเมลที่ถูกต้อง
+  error_problem_signing_title: เกิดข้อผิดพลาดขณะเข้าสู่ระบบ
+  error_problem_signing_body: ขออภัย เกิดข้อผิดพลาดขึ้น โปรดลองใหม่ในภายหลัง
+  error_incorrect: อีเมลหรือรหัสผ่านที่คุณกรอกไม่ถูกต้อง หรือไม่พบบัญชีดังกล่าวใน IKEA ประเทศไทย

@@ -1,0 +1,5 @@
+Login_page:
+  please_enter_email: Please enter a valid email
+  error_problem_signing_title: There was a problem signing in
+  error_problem_signing_body: It’s our fault, not yours. Please try again later to see if we can work it out.
+  error_incorrect: The email address or password you entered is incorrect or the account does not exist in IKEA Thailand
