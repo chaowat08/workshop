@@ -1,0 +1,6 @@
+regis_page :
+  error_msg_policy : Please confirm that you agree to the Privacy Policy to proceed
+  error_msg_firstname : The first name field cannot be left empty
+  error_msg_lastname : The last name field cannot be left empty
+  error_msg_email : The email address field cannot be left empty
+  error_msg_password : The password field cannot be left empty
