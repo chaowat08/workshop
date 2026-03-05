@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.14.3 on darwin)" generated="2026-03-05T16:39:32.816056" rpa="false" schemaversion="5">
+<suite id="s1" name="TC 001" source="/Users/hunter/Documents/GitHub/workshop/testcases/TC_001.robot">
+<test id="s1-t1" name="IKEA_005 - Verify user can add product to favorites successfully" line="5">
+<kw name="Open web" owner="common">
+<kw name="New Browser" owner="Browser">
+<msg time="2026-03-05T16:39:32.986846" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/hunter/Documents/GitHub/workshop/testcases/browser/traces/temp/159d295a-e6e2-4971-acd0-b2c3492c3248"}</msg>
+<msg time="2026-03-05T16:39:33.007301" level="INFO">Starting Browser process /Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/Browser/wrapper/index.js using at 127.0.0.1:60607</msg>
+<msg time="2026-03-05T16:39:35.108516" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/hunter/Documents/GitHub/workshop/testcases/browser/traces/temp/159d295a-e6e2-4971-acd0-b2c3492c3248"}</msg>
+<arg>chromium</arg>
+<arg>headless=${FALSE}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-03-05T16:39:32.986475" elapsed="2.122282"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2026-03-05T16:39:35.110378" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2026-03-05T16:39:35.118217" level="INFO">Successfully created context. </msg>
+<msg time="2026-03-05T16:39:35.118284" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-03-05T16:39:35.109103" elapsed="0.009242"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2026-03-05T16:39:36.717214" level="INFO">Successfully initialized new page object and opened url: https://www.ikea.com/th/en/</msg>
+<arg>https://www.ikea.com/th/en/</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-03-05T16:39:35.118486" elapsed="1.600100"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:32.986046" elapsed="3.733396"/>
+</kw>
+<kw name="Input product brand in search box" owner="header_page">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-03-05T16:39:36.725758" level="INFO">Fills the text 'LEGITIM' in the given field.</msg>
+<arg>${search_product_locator_txt_search_input}</arg>
+<arg>${product_name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:36.724228" elapsed="0.034066"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:36.722644" elapsed="0.035813"/>
+</kw>
+<kw name="Click search button" owner="header_page">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-05T16:39:36.777806" level="INFO">Waited for Element with selector css=button[type="submit"].search-box-search__action at state enabled</msg>
+<arg>${search_product_locator_btn_search}</arg>
+<arg>enabled</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-05T16:39:36.758888" elapsed="0.019021"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2026-03-05T16:39:36.778386" level="INFO">Clicks the element 'css=button[type="submit"].search-box-search__action'.</msg>
+<arg>${search_product_locator_btn_search}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:36.778040" elapsed="0.436897"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:36.758660" elapsed="0.456406"/>
+</kw>
+<kw name="Verify product name is displayed" owner="product_result_page">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-05T16:39:38.020604" level="INFO">Waited for Element with selector css=.plp-product-list__products &gt; div:nth-child(1) .plp-price-module__product-name at state visible</msg>
+<arg>${product_result_locator_lbl_product_name}</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-05T16:39:37.215607" elapsed="0.805233"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-05T16:39:38.050092" level="INFO">Text: 'LEGITIM'</msg>
+<msg time="2026-03-05T16:39:38.050318" level="INFO">${product_name} = LEGITIM</msg>
+<var>${product_name}</var>
+<arg>${product_result_locator_lbl_product_name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:38.021169" elapsed="0.029178"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${product_name}</arg>
+<arg>${IKEA_005.product_name_search_en}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-05T16:39:38.050608" elapsed="0.000984"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:37.215295" elapsed="0.836386"/>
+</kw>
+<kw name="Click product name" owner="product_result_page">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-05T16:39:38.052513" level="INFO">Clicks the element 'css=.plp-product-list__products &gt; div:nth-child(1) .plp-price-module__product-name'.</msg>
+<arg>${product_result_locator_lbl_product_name}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:38.052142" elapsed="0.352261"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:38.051894" elapsed="0.352742"/>
+</kw>
+<kw name="Verify product name is displayed" owner="product_details_page">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-05T16:39:38.699852" level="INFO">Waited for Element with selector css=span.pipcom-price-module__name-decorator at state visible</msg>
+<arg>${product_details_locator_lbl_product_name}</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-05T16:39:38.405818" elapsed="0.294146"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-05T16:39:38.718838" level="INFO">Text: 'LEGITIM'</msg>
+<msg time="2026-03-05T16:39:38.719144" level="INFO">${product_name} = LEGITIM</msg>
+<var>${product_name}</var>
+<arg>${product_details_locator_lbl_product_name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:38.700111" elapsed="0.019057"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${product_name}</arg>
+<arg>${IKEA_005.product_name_search_en}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-05T16:39:38.719331" elapsed="0.000569"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:38.405011" elapsed="0.314942"/>
+</kw>
+<kw name="Click add to favorite button" owner="product_details_page">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-05T16:39:38.720647" level="INFO">Clicks the element 'css=button[aria-label="Add to favourites"]'.</msg>
+<arg>${product_details_locator_btn_favourite}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:38.720323" elapsed="0.874154"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:38.720112" elapsed="0.874456"/>
+</kw>
+<kw name="Verify popup message is displayed" owner="product_details_page">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-05T16:39:41.401217" level="INFO">Waited for Element with selector css=.hnf-toast at state visible</msg>
+<arg>${product_details_locator_alert_dialog}</arg>
+<arg>visible</arg>
+<arg>timeout=5s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-05T16:39:39.595022" elapsed="1.806430"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-05T16:39:41.415439" level="INFO">Text: 'LEGITIM was added to your favourites'</msg>
+<arg>css=.hnf-toast__text</arg>
+<arg>contains</arg>
+<arg>${IKEA_005.product_name_search_en} was added to your favourites</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:41.401750" elapsed="0.013838"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:39.594765" elapsed="1.820967"/>
+</kw>
+<kw name="Click view button" owner="product_details_page">
+<kw name="Click" owner="Browser">
+<msg time="2026-03-05T16:39:41.417017" level="INFO">Clicks the element 'css=.hnf-toast__action-message'.</msg>
+<arg>${product_details_locator_btn_view}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:41.416463" elapsed="0.244190"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-05T16:39:44.662492" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-05T16:39:41.660870" elapsed="3.001816"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:41.416053" elapsed="3.246792"/>
+</kw>
+<kw name="Verify product name is displayed" owner="product_favourite_view_page">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-05T16:39:44.687731" level="INFO">Waited for Element with selector css=._productTitle_1510q_19 at state visible</msg>
+<arg>${product_favourite_view_locator_lbl_product_name}</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-05T16:39:44.663874" elapsed="0.024018"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2026-03-05T16:39:44.704948" level="INFO">Text: 'LEGITIM'</msg>
+<msg time="2026-03-05T16:39:44.705086" level="INFO">${product_name} = LEGITIM</msg>
+<var>${product_name}</var>
+<arg>${product_favourite_view_locator_lbl_product_name}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-03-05T16:39:44.688112" elapsed="0.017000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${product_name}</arg>
+<arg>${IKEA_005.product_name_search_en}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-03-05T16:39:44.705278" elapsed="0.000664"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:44.663295" elapsed="0.042713"/>
+</kw>
+<kw name="Verify add all items to cart button is displayed" owner="product_favourite_view_page">
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-03-05T16:39:44.709824" level="INFO">Waited for Element with selector css=[data-testid="add-to-cart-button"] at state visible</msg>
+<arg>${product_favourite_view_locator_btn_add_all_items}</arg>
+<arg>visible</arg>
+<arg>timeout=10s</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-03-05T16:39:44.706415" elapsed="0.003504"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-03-05T16:39:47.711307" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-03-05T16:39:44.710035" elapsed="3.001790"/>
+</kw>
+<status status="PASS" start="2026-03-05T16:39:44.706198" elapsed="3.006083"/>
+</kw>
+<msg time="2026-03-05T16:39:47.732957" level="INFO">Switching context to context=e0732ee7-b024-4505-8fbb-85275f1ba5df in CURRENT</msg>
+<msg time="2026-03-05T16:39:47.742750" level="INFO">Successfully changed active context: context=e0732ee7-b024-4505-8fbb-85275f1ba5df</msg>
+<msg time="2026-03-05T16:39:47.782561" level="INFO">Successfully closed Context</msg>
+<status status="PASS" start="2026-03-05T16:39:32.985686" elapsed="14.727410"/>
+</test>
+<status status="PASS" start="2026-03-05T16:39:32.816669" elapsed="14.966420"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC 001" id="s1" pass="1" fail="0" skip="0">TC 001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
